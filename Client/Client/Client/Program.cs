@@ -23,7 +23,7 @@ namespace Client
                 IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
                 IPAddress ipAddress = ipHostInfo.AddressList[0];
                 // change host to connect to master server
-                IPEndPoint remoteEP = new IPEndPoint(ipAddress, 1234);
+                IPEndPoint remoteEP = new IPEndPoint(ipAddress, 1230);
 
                 // Create a TCP/IP  socket.  
                 Socket sender = new Socket(ipAddress.AddressFamily,
@@ -45,8 +45,16 @@ namespace Client
 
                     // Receive the response from the remote device.  
                     int bytesRec = sender.Receive(bytes);
-                    Console.WriteLine("Echoed test = {0}",
-                        Encoding.ASCII.GetString(bytes, 0, bytesRec));
+                    //Console.WriteLine("Echoed test = {0}",
+                    //    Encoding.ASCII.GetString(bytes, 0, bytesRec));
+                    string str = Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                    string[] lines = str.Split('\n');
+                    Console.WriteLine("List data server and file");
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        string[] line = lines[i].Split(';');
+                            Console.WriteLine($"{i + 1}. Server: {line[0]}:{line[1]} . Name file: {line[2]}");
+                    }
 
                     // Release the socket.  
                     sender.Shutdown(SocketShutdown.Both);
