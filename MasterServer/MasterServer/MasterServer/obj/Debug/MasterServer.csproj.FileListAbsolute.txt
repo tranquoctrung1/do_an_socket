@@ -1,0 +1,7 @@
+C:\Users\Bavitech\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.exe.config
+C:\Users\Bavitech\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.exe
+C:\Users\Bavitech\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.pdb
+C:\Users\Bavitech\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.csprojAssemblyReference.cache
+C:\Users\Bavitech\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.csproj.CoreCompileInputs.cache
+C:\Users\Bavitech\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.exe
+C:\Users\Bavitech\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.pdb
