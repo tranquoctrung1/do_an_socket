@@ -81,16 +81,9 @@ namespace Client
                 Console.WriteLine(e.ToString());
             }
         }
-        public static void recieveFile()
+        public static void recieveFile(IPEndPoint dataServerEndPoint, string fileName)
         {
-            Console.WriteLine("Data Server IP Address: ");
-            var dataServerIp = IPAddress.Parse(Console.ReadLine());
-            Console.WriteLine("Data Server Port: ");
-            var dataServerPort = int.Parse(Console.ReadLine());
-            IPEndPoint dataServerEndPoint = new IPEndPoint(dataServerIp, dataServerPort);
-
-            Console.WriteLine("File name: ");
-            var fileName = Console.ReadLine();
+            
             Console.WriteLine("Enter path save file: ");
             string path = Console.ReadLine();
 
@@ -128,6 +121,16 @@ namespace Client
         static void Main(string[] args)
         {
             StartClient();
+            Console.WriteLine("Data Server IP Address: ");
+            var dataServerIp = IPAddress.Parse(Console.ReadLine());
+            Console.WriteLine("Data Server Port: ");
+            var dataServerPort = int.Parse(Console.ReadLine());
+            IPEndPoint dataServerEndPoint = new IPEndPoint(dataServerIp, dataServerPort);
+
+            Console.WriteLine("File name: ");
+            var fileName = Console.ReadLine();
+
+            recieveFile(dataServerEndPoint, fileName);
             Console.ReadLine();
         }
     }
