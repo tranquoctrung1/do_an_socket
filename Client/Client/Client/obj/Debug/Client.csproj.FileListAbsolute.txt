@@ -11,3 +11,11 @@ C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.p
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\bin\Debug\Client.exe
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\bin\Debug\Client.pdb
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Thanh Tuan\Desktop\20424121\20424071-20424082-20424121\Client\Client\Client\bin\Debug\Client.exe.config
+C:\Users\Thanh Tuan\Desktop\20424121\20424071-20424082-20424121\Client\Client\Client\obj\Debug\Client.exe
+C:\Users\Thanh Tuan\Desktop\20424121\20424071-20424082-20424121\Client\Client\Client\obj\Debug\Client.pdb
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\Client\Client\Client\bin\Debug\Client.exe.config
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\Client\Client\Client\bin\Debug\Client.exe
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\Client\Client\Client\bin\Debug\Client.pdb
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\Client\Client\Client\obj\Debug\Client.exe
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\Client\Client\Client\obj\Debug\Client.pdb
