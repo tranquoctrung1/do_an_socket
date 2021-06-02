@@ -88,6 +88,7 @@ namespace Client
         }
         public static void recieveFile()
         {
+            Console.WriteLine("===================================================================================================");
             Console.WriteLine("Data Server IP Address: ");
             var dataServerIp = IPAddress.Parse(Console.ReadLine());
             Console.WriteLine("Data Server Port: ");
