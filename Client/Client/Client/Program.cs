@@ -38,7 +38,7 @@ namespace Client
                         sender.RemoteEndPoint.ToString());
 
                     // Encode the data string into a byte array.  
-                    byte[] msg = Encoding.ASCII.GetBytes("127.0.0.1;4444;text.txt\n127.0.0.1;4443;text2.txt<EOF>");
+                    byte[] msg = Encoding.ASCII.GetBytes("<EOF>");
 
                     // Send the data through the socket.  
                     int bytesSent = sender.Send(msg);
@@ -49,11 +49,16 @@ namespace Client
                     //    Encoding.ASCII.GetString(bytes, 0, bytesRec));
                     string str = Encoding.ASCII.GetString(bytes, 0, bytesRec);
                     string[] lines = str.Split('\n');
+                    Console.WriteLine("===================================================================================================");
                     Console.WriteLine("List data server and file");
                     for (int i = 0; i < lines.Length; i++)
                     {
                         string[] line = lines[i].Split(';');
-                            Console.WriteLine($"{i + 1}. Server: {line[0]}:{line[1]} . Name file: {line[2]}");
+                        if(i == 0)
+                        {
+                            line[0] = line[0].Substring(3);
+                        }
+                        Console.WriteLine($"{i + 1}/ Server: {line[0]}:{line[1]} with file name: {line[2]}");
                     }
 
                     // Release the socket.  
@@ -80,9 +85,40 @@ namespace Client
                 Console.WriteLine(e.ToString());
             }
         }
+        public static void downloadUPDFile()
+        {
+            try
+            {
+                Console.WriteLine("===================================================================================================");
+                // enter the infor server to download file 
+                Console.WriteLine("Enter the ip, port and file name to download");
+                Console.Write("Enter ip: ");
+                string ip = Console.ReadLine();
+                Console.Write("Enter port: ");
+                string port = Console.ReadLine();
+                Console.Write("Enter file name: ");
+                string fileName = Console.ReadLine();
+
+
+
+            }
+            catch (ArgumentNullException ane)
+            {
+                Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
+            }
+            catch (SocketException se)
+            {
+                Console.WriteLine("SocketException : {0}", se.ToString());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Unexpected exception : {0}", e.ToString());
+            }
+        }
         static void Main(string[] args)
         {
             StartClient();
+            downloadUPDFile();
             Console.ReadLine();
         }
     }

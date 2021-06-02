@@ -369,7 +369,7 @@ namespace ConsoleApp1
             fileReceiver?.Shutdown();
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
             
         

@@ -1,2 +1,4 @@
 C:\Users\thanhnt0500\Desktop\GITLAB\do_an_socket\FileServer\Server\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
 C:\Users\thanhnt0500\Desktop\GITLAB\do_an_socket\FileServer\Server\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\Bavitech\Desktop\do_an_socket\FileServer\Server\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\Users\Bavitech\Desktop\do_an_socket\FileServer\Server\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache

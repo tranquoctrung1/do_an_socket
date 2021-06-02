@@ -4,10 +4,10 @@ C:\Users\Bavitech\Desktop\do_an_socket\Client\Client\Client\bin\Debug\Client.pdb
 C:\Users\Bavitech\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
 C:\Users\Bavitech\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.exe
 C:\Users\Bavitech\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.pdb
-C:\Users\Bavitech\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.csprojAssemblyReference.cache
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\bin\Debug\Client.exe.config
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.exe
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.pdb
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\bin\Debug\Client.exe
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\bin\Debug\Client.pdb
 C:\Users\Thanh Tuan\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\Bavitech\Desktop\do_an_socket\Client\Client\Client\obj\Debug\Client.csproj.AssemblyReference.cache

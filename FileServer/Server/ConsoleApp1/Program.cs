@@ -315,8 +315,6 @@ namespace ConsoleApp1
         }
 
 
-
-
         #region Program Execution
         public static UdpFileSender fileSender;
 
