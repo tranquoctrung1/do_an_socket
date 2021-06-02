@@ -11,3 +11,12 @@ C:\Users\Thanh Tuan\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\
 C:\Users\Thanh Tuan\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.exe
 C:\Users\Thanh Tuan\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.pdb
 C:\Users\Thanh Tuan\Desktop\do_an_socket\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.csprojResolveAssemblyReference.cache
+C:\Users\Thanh Tuan\Desktop\20424121\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.exe.config
+C:\Users\Thanh Tuan\Desktop\20424121\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.exe
+C:\Users\Thanh Tuan\Desktop\20424121\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.pdb
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.exe.config
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.exe
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\bin\Debug\MasterServer.pdb
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.csprojResolveAssemblyReference.cache
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.exe
+C:\Users\Thanh Tuan\Desktop\20424071-20424082-20424121\MasterServer\MasterServer\MasterServer\obj\Debug\MasterServer.pdb

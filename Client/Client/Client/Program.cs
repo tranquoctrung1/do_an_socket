@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Client
@@ -85,40 +86,54 @@ namespace Client
                 Console.WriteLine(e.ToString());
             }
         }
-        public static void downloadUPDFile()
+        public static void recieveFile()
         {
+            Console.WriteLine("Data Server IP Address: ");
+            var dataServerIp = IPAddress.Parse(Console.ReadLine());
+            Console.WriteLine("Data Server Port: ");
+            var dataServerPort = int.Parse(Console.ReadLine());
+            IPEndPoint dataServerEndPoint = new IPEndPoint(dataServerIp, dataServerPort);
+
+            Console.WriteLine("File name: ");
+            var fileName = Console.ReadLine();
+            Console.WriteLine("Enter path save file: ");
+            string path = Console.ReadLine();
+
+            Socket socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
+            socket.Connect(dataServerEndPoint);
+            NetworkStream networkStream = new NetworkStream(socket);
+            StreamWriter streamWriter = new StreamWriter(networkStream);
+            streamWriter.Write(fileName);
+            networkStream.Flush();
+
+            path = path + "\\";
+            path = Path.Combine(path, fileName);
+            StreamReader streamReader = new StreamReader(networkStream);
+            var fileDataLength = streamReader.Read();
             try
             {
-                Console.WriteLine("===================================================================================================");
-                // enter the infor server to download file 
-                Console.WriteLine("Enter the ip, port and file name to download");
-                Console.Write("Enter ip: ");
-                string ip = Console.ReadLine();
-                Console.Write("Enter port: ");
-                string port = Console.ReadLine();
-                Console.Write("Enter file name: ");
-                string fileName = Console.ReadLine();
-
-
-
+                FileStream newFile = new FileStream(@path, FileMode.OpenOrCreate, FileAccess.Write);
+                byte[] buffer = new byte[4096];
+                var length = 0L;
+                while(length < fileDataLength)
+                {
+                    var count = networkStream.Read(buffer, 0, 4096);
+                    newFile.Write(buffer, 0, count);
+                    length += count;
+                }
+                newFile.Close();
             }
-            catch (ArgumentNullException ane)
+            catch(Exception ex)
             {
-                Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
+                Console.WriteLine("Unexpected exception : {0}", ex.ToString());
             }
-            catch (SocketException se)
-            {
-                Console.WriteLine("SocketException : {0}", se.ToString());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Unexpected exception : {0}", e.ToString());
-            }
+            socket.Close();
+
         }
         static void Main(string[] args)
         {
             StartClient();
-            downloadUPDFile();
+            recieveFile();
             Console.ReadLine();
         }
     }
