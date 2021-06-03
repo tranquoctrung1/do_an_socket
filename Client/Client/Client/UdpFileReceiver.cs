@@ -1,20 +1,19 @@
-﻿
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
-using System.Text;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Threading;
-using System.Collections.Generic;
 using System.Security.Cryptography;
-using ConsoleApp1;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace Client
 {
-    public class UdpFileReceiver
+     public class UdpFileReceiver
     {
         #region Statics
         public static readonly int MD5ChecksumByteSize = 16;
@@ -355,37 +354,5 @@ namespace ConsoleApp1
 
             return good;
         }
-
-
-
-
-
-        #region Program Execution
-        public static UdpFileReceiver fileReceiver;
-
-        public static void InterruptHandler(object sender, ConsoleCancelEventArgs args)
-        {
-            args.Cancel = true;
-            fileReceiver?.Shutdown();
-        }
-
-        //static void Main()
-        //{
-            
-        
-        //    // setup the receiver
-        //    string hostname = "localhost";//args[0].Trim();
-        //    int port = 6000;//int.Parse(args[1].Trim());
-        //    string filename = "short_message.txt";//args[2].Trim();
-        //    fileReceiver = new UdpFileReceiver(hostname, port);
-
-        //    // Add the Ctrl-C handler
-        //    Console.CancelKeyPress += InterruptHandler;
-
-        //    // Get a file
-        //    fileReceiver.GetFile(filename);
-        //    fileReceiver.Close();
-        //}
-        #endregion // Program Execution
     }
 }

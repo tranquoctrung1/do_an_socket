@@ -86,49 +86,74 @@ namespace Client
                 Console.WriteLine(e.ToString());
             }
         }
+
+        public static UdpFileReceiver fileReceiver;
+
+        public static void InterruptHandler(object sender, ConsoleCancelEventArgs args)
+        {
+            args.Cancel = true;
+            fileReceiver?.Shutdown();
+        }
         public static void recieveFile()
         {
             Console.WriteLine("===================================================================================================");
             Console.WriteLine("Data Server IP Address: ");
-            var dataServerIp = IPAddress.Parse(Console.ReadLine());
+            //var dataServerIp = IPAddress.Parse(Console.ReadLine());
+            string dataServerIp = Console.ReadLine();
+
             Console.WriteLine("Data Server Port: ");
-            var dataServerPort = int.Parse(Console.ReadLine());
-            IPEndPoint dataServerEndPoint = new IPEndPoint(dataServerIp, dataServerPort);
+            //var dataServerPort = int.Parse(Console.ReadLine());
+            //IPEndPoint dataServerEndPoint = new IPEndPoint(dataServerIp, dataServerPort);
+
+            int dataServerPort =  int.Parse(Console.ReadLine());
 
             Console.WriteLine("File name: ");
             var fileName = Console.ReadLine();
             Console.WriteLine("Enter path save file: ");
             string path = Console.ReadLine();
 
-            Socket socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
-            socket.Connect(dataServerEndPoint);
-            NetworkStream networkStream = new NetworkStream(socket);
-            StreamWriter streamWriter = new StreamWriter(networkStream);
-            streamWriter.Write(fileName);
-            networkStream.Flush();
+            //Socket socket = new Socket(SocketType.Dgram, ProtocolType.Udp);
+            //socket.Connect(dataServerEndPoint);
+            //NetworkStream networkStream = new NetworkStream(socket);
+            //StreamWriter streamWriter = new StreamWriter(networkStream);
+            //streamWriter.Write(fileName);
+            //networkStream.Flush();
 
-            path = path + "\\";
-            path = Path.Combine(path, fileName);
-            StreamReader streamReader = new StreamReader(networkStream);
-            var fileDataLength = streamReader.Read();
-            try
-            {
-                FileStream newFile = new FileStream(@path, FileMode.OpenOrCreate, FileAccess.Write);
-                byte[] buffer = new byte[4096];
-                var length = 0L;
-                while(length < fileDataLength)
-                {
-                    var count = networkStream.Read(buffer, 0, 4096);
-                    newFile.Write(buffer, 0, count);
-                    length += count;
-                }
-                newFile.Close();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Unexpected exception : {0}", ex.ToString());
-            }
-            socket.Close();
+            //path = path + "\\";
+            //path = Path.Combine(path, fileName);
+            //StreamReader streamReader = new StreamReader(networkStream);
+            //var fileDataLength = streamReader.Read();
+            //try
+            //{
+            //    FileStream newFile = new FileStream(@path, FileMode.OpenOrCreate, FileAccess.Write);
+            //    byte[] buffer = new byte[4096];
+            //    var length = 0L;
+            //    while(length < fileDataLength)
+            //    {
+            //        var count = networkStream.Read(buffer, 0, 4096);
+            //        newFile.Write(buffer, 0, count);
+            //        length += count;
+            //    }
+            //    newFile.Close();
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine("Unexpected exception : {0}", ex.ToString());
+            //}
+            //socket.Close();
+
+            //setup the receiver
+            //string hostname = "localhost";//args[0].Trim();
+            //int port = 6000;//int.Parse(args[1].Trim());
+            //string filename = "short_message.txt";//args[2].Trim();
+            fileReceiver = new UdpFileReceiver(dataServerIp, dataServerPort);
+
+            // Add the Ctrl-C handler
+            Console.CancelKeyPress += InterruptHandler;
+
+            // Get a file
+            fileReceiver.GetFile(fileName);
+            fileReceiver.Close();
 
         }
         static void Main(string[] args)
